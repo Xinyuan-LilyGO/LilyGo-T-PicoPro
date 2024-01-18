@@ -6,7 +6,7 @@
 | -------------- | ---------------------------------------------------- | ---------- | ------------- |
 | [T-PicoPro][1] | RP2040(264kB SRAM + 16MB Flash) + ESP32-C6(4M Flash) | 222x480    | IPS 2.33 Inch |
 
-[1]: https://www.lilygo.cc/products/
+[1]: https://www.lilygo.cc/products/t-pico
 
 ## 2️⃣Examples
 
