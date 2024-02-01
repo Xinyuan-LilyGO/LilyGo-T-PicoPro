@@ -21,7 +21,7 @@ void touch_init(int16_t w, int16_t h, uint8_t r)
 {
     // Initialize capacitive touch
     touch.setPins(BOARD_TOUCH_RST, BOARD_TOUCH_IRQ);
-    hasTouch = touch.init(Wire, BOARD_I2C_SDA, BOARD_I2C_SCL, CST226SE_SLAVE_ADDRESS);
+    hasTouch = touch.begin(Wire, CST226SE_SLAVE_ADDRESS, BOARD_I2C_SDA, BOARD_I2C_SCL);
 }
 
 bool touch_has_signal()

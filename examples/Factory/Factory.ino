@@ -237,7 +237,7 @@ void setup()
 
     Serial.println("init Touch .");
     touch.setPins(BOARD_TOUCH_IRQ, BOARD_TOUCH_IRQ);
-    hasTouch = touch.init(Wire, BOARD_I2C_SDA, BOARD_I2C_SCL, CST226SE_SLAVE_ADDRESS);
+    hasTouch = touch.begin(Wire, CST226SE_SLAVE_ADDRESS, BOARD_I2C_SDA, BOARD_I2C_SCL);
     if (!hasPMU) {
         Serial.println("Touch is not online!"); delay(500);
     } else {
