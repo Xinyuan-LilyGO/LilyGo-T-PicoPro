@@ -167,6 +167,9 @@ void setup()
     } else {
         Serial.println("Find PMU.");
 
+        // Set USB input current limit
+        PMU.setInputCurrentLimit(1000);
+
         // In LilyGo products, the OTG external enable Pin is connected to
         // VSYS by default and is closed after the initialization is completed.
         PMU.disableOTG();
@@ -179,6 +182,14 @@ void setup()
         Serial.printf("getChargeTargetVoltage:%u\n", PMU.getChargeTargetVoltage());
         Serial.printf("getChargerConstantCurr:%u\n", PMU.getChargerConstantCurr());
         Serial.printf("getPrechargeCurr:%u\n", PMU.getPrechargeCurr());
+
+
+        // For devices that have been connected to the battery, the charging function is turned on by default.
+        // PMU.enableCharge();
+
+        // For boards without an external battery, the charging function should be turned off, otherwise the power supply current of the power chip will be limited.
+        PMU.disableCharge();
+
     }
 
     // Dump I2C Devices
